@@ -7,6 +7,7 @@ library PriceConverter{
         // address  0xA39434A63A52E749F02807ae27335515BA4b07F7
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0xA39434A63A52E749F02807ae27335515BA4b07F7);
         (,int256 price,,,) = priceFeed.latestRoudData();
+        // multiply with 1e10 to match the length of wei
         return uint256(price * 1e10);
     }
 
